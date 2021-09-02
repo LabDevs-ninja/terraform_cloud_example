@@ -7,11 +7,20 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
-variable "master_username" {
+variable "AWS_SECRET_KEY" {
   type    = string
   default = ""
 }
 
+variable "AWS_ACCESS_KEY" {
+  type    = string
+  default = ""
+}
+
+variable "master_username" {
+  type    = string
+  default = ""
+}
 
 variable "master_password" {
   type    = string
