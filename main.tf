@@ -14,6 +14,7 @@ provider "aws" {
   region  = "us-west-2"
 }
 
+/*
 resource "aws_instance" "app_server" {
   ami           = "ami-830c94e3"
   instance_type = "t2.micro"
@@ -21,4 +22,15 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = "ExampleAppServerInstance"
   }
+}
+*/
+  
+resource "aws_docdb_cluster" "docdb" {
+  cluster_identifier      = "my-docdb-cluster"
+  engine                  = "docdb"
+  master_username         = var.master_username
+  master_password         = var.master_password
+  backup_retention_period = 5
+  preferred_backup_window = "07:00-09:00"
+  skip_final_snapshot     = true
 }
