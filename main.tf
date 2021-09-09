@@ -35,4 +35,18 @@ resource "aws_docdb_cluster" "docdb" {
   skip_final_snapshot     = true
 }
 
-/*Version 1.0.0*/
+resource "aws_docdb_cluster_instance" "cluster_instances" {
+  count              = 1
+  identifier         = "docdb-${count.index}"
+  cluster_identifier = aws_docdb_cluster.default.id
+  instance_class     = "db.t3.medium"
+}
+
+resource "aws_docdb_cluster" "default" {
+  cluster_identifier = "docdb-cluster-demo"
+  availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
+  master_username    = "foo"
+  master_password    = "barbut8chars"
+}
+
+/*Version 1.1.0*/
