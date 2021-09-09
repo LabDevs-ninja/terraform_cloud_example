@@ -34,3 +34,5 @@ resource "aws_docdb_cluster" "docdb" {
   preferred_backup_window = "07:00-09:00"
   skip_final_snapshot     = true
 }
+
+/*Version 1.0.0*/
