@@ -44,7 +44,7 @@ resource "aws_docdb_cluster_instance" "cluster_instances" {
 
 resource "aws_docdb_cluster" "default" {
   cluster_identifier = "docdb-cluster-demo"
-  availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
+  availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
   master_username    = "foo"
   master_password    = "barbut8chars"
 }
