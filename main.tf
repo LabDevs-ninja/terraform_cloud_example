@@ -42,4 +42,4 @@ resource "aws_docdb_cluster" "default" {
   skip_final_snapshot     = true
 }
 
-/*Version 1.1.1*/
+/*Version 1.2.1*/
